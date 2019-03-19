@@ -274,7 +274,9 @@ public class S3ClientOptions {
      * @return True if chunked encoding is explicitly disabled for all requests
      */
     public boolean isChunkedEncodingDisabled() {
-        return chunkedEncodingDisabled;
+        // HACK(Soulou) Artificially disable chunked encoding for ES snapshotting
+        return true;
+        // return chunkedEncodingDisabled;
     }
 
     /**
